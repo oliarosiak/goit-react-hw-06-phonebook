@@ -1,5 +1,16 @@
 @import-normalize; /* bring in normalize.css styles */
 
+:root{
+  --text-color:#e9e9e9;
+  --border-color: #9a9a92;
+  --bcg-color: #9a9a9285;
+  --accent-color: #572a1f;
+
+  --lumos-color: #f8f785;
+  --accio-color: #6499c5;
+  --kedavra-color: #61c55c;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,9 +18,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  padding-top: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color); 
+  background: linear-gradient(to right, #d9a7c7, #fffcdc);
+  background-image: url(./img/hp-pic.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1,
+h2 {
+  margin: 0 0 12px;
+}
+
+ul {
+  margin: 0;  
 }
