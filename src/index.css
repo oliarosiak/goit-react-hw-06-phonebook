@@ -18,14 +18,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+ 
   display: flex;
   justify-content: center;
-  padding-top: 12px;
+  padding: 12px 0 36px;
   font-size: 16px;
   font-weight: bold;
-  color: var(--text-color);
-  background: linear-gradient(to right, #d9a7c7, #fffcdc);
+  color: var(--text-color); 
   background-image: url(./img/hp-pic.jpg);
   background-repeat: no-repeat;
   background-position: left top;
