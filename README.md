@@ -1,24 +1,39 @@
-# React homework template
+# React Homework - 6 - PhoneBook
 
-При здачі домашньої роботи є посилання: на вихідні файли та робочу сторінку проекту на GitHub Pages
-В Redux-стані зберігається мінімально необхідний набір даних
-Під час запуску коду завдання в консолі відсутні помилки та попередження.
-Для кожного компонента є окрема папка з файлом React-компонента та файлом стилів
-Для компонентів описані propTypes
-Використана бібліотека Redux Toolkit
+To your attention, an application for saving phone numbers - Hogwarts Magical Phonebook.
 
+## The project used:
 
-# Книга контактів
-Виконай рефакторинг коду застосунку «Книга контактів», додавши управління станом за допомогою бібліотеки Redux Toolkit. 
-Нехай Redux-стан виглядає наступним чином.
+`«React»`
+`«Redux»`
+`«React Redux»`
+`«@reduxjs/toolkit»`
+`«Javascript»`
+`«React Icons / library»`
+`«Emotion / library»`
+`«Formik / library»`
+`«redux-persist / npm»`
+`«prop-types / npm»`
+`«yup / npm»`
 
-{
-  contacts: [],
-  filter: ""
-}
+Used assembly: [React project template](https://github.com/goitacademy/react-homework-template#readme)
 
-✅Створи сховище з configureStore()
-✅Використовуй функцію createSlice()
-✅Створи дії збереження та видалення контакту, а також оновлення фільтра
-✅Зв'яжи React-компоненти з Redux-логікою за допомогою хуків бібліотеки react-redux.
-✅Використай бібліотеку Redux Persist для збереження масиву контактів у локальному сховищі
+## Project structure
+
+✅ Block in which you can add a new contact to the phone book.
+![new_contact](./assets/add_new_contact.png)
+
+✅ Block in which you can search for a contact by his name.
+![filter](./assets/filter_contacts.png)
+
+✅ A list of all phonebook contacts.
+![contacts_list](./assets/contacts_list.png)
+
+✅ You cannot add users with the same name or phone number.
+![duplicate](./assets/duplicate.png)
+
+✅ After restarting the application, all contacts will remain in place!
+![restart](./assets/contacts_list_reboot.png)
+
+✅ And you can also delete a contact using the magic button!
+![delete](./assets/delete_btn.png)

@@ -1,7 +1,7 @@
 @import-normalize; /* bring in normalize.css styles */
 
-:root{
-  --text-color:#e9e9e9;
+:root {
+  --text-color: #e9e9e9;
   --border-color: #9a9a92;
   --bcg-color: #9a9a9285;
   --accent-color: #572a1f;
@@ -20,11 +20,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   padding-top: 12px;
   font-size: 16px;
   font-weight: bold;
-  color: var(--text-color); 
+  color: var(--text-color);
   background: linear-gradient(to right, #d9a7c7, #fffcdc);
   background-image: url(./img/hp-pic.jpg);
   background-repeat: no-repeat;
@@ -44,5 +44,5 @@ h2 {
 }
 
 ul {
-  margin: 0;  
+  margin: 0;
 }
