@@ -1,6 +1,9 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
+import { getContacts } from '../../redux/selectors';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import PropTypes from 'prop-types';
+
 import { GiWhiteBook } from 'react-icons/gi';
 import {
   FormContainer,
@@ -10,7 +13,7 @@ import {
   FormBtm,
 } from './ContactForm.styled';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = () => {
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -28,14 +31,27 @@ const ContactForm = ({ onSubmit }) => {
       .max(16),
   });
 
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
+
   const initialValues = {
     name: '',
     number: '',
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    onSubmit(values);
+    const checkedName = contacts.find(contact => {
+      const nameLower = values.name.toLowerCase();
+      const contactNameLower = contact.name.toLowerCase();
+      return contactNameLower === nameLower || contact.number === values.number;
+    });
+
+    if (checkedName) {
+      alert('Such data is already in the phone book');
+      return resetForm();
+    }
+
+    dispatch(addContact(values));
     resetForm();
   };
 
@@ -62,10 +78,6 @@ const ContactForm = ({ onSubmit }) => {
       </FormContainer>
     </Formik>
   );
-};
-
-ContactForm.propType = {
-  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

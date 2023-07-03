@@ -1,23 +1,26 @@
-import PropTypes from "prop-types";
-import { RxMagicWand } from "react-icons/rx";
+import { useDispatch } from 'react-redux';
+import { filterValue } from 'redux/filterSlice';
+
+import { RxMagicWand } from 'react-icons/rx';
 import { FilterContainer, FilterLabel, FilterInput } from './Filter.styled';
 
-const Filter = ({ filterValue, filteringMethod }) => (
-  <FilterContainer >
-    <FilterLabel >
-      <RxMagicWand /> Accio contacts by name
-      <FilterInput type="text" name="search" 
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Use only letters, apostrophe, dash and spaces."        
-        value={filterValue} onChange={filteringMethod}
-      />      
-    </FilterLabel>
-  </FilterContainer>
-)
+const Filter = () => {
+  const dispatch = useDispatch();
 
-Filter.propTypes = {
-  filterValue: PropTypes.string.isRequired,
-  filteringMethod: PropTypes.func.isRequired,  
+  const handleFilterChange = event => dispatch(filterValue(event.target.value));
+  return (
+    <FilterContainer>
+      <FilterLabel>
+        <RxMagicWand /> Accio contacts by name
+        <FilterInput
+          type="text"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Use only letters, apostrophe, dash and spaces."
+          onChange={handleFilterChange}
+        />
+      </FilterLabel>
+    </FilterContainer>
+  );
 };
 
 export default Filter;
